@@ -8,7 +8,7 @@ public class No<T> {
     public No() {
 
     }
-
+//comentario
     public No(T object) {
         this.object = object;
         this.refNo = null;
