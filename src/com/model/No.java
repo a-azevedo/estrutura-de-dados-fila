@@ -1,13 +1,15 @@
 package com.model;
 
 public class No<T> {
+
     private T object;
     private No<T> refNo;
 
-    public No(){
+    public No() {
 
     }
-    public No(T object){
+
+    public No(T object) {
         this.object = object;
         this.refNo = null;
     }

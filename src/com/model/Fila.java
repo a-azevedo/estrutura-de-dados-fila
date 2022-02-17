@@ -1,30 +1,35 @@
 package com.model;
 
 public class Fila<T> {
+
     private No<T> refNoEntradaFila;
 
-    public Fila(){
+    public Fila() {
         this.refNoEntradaFila = null;
     }
-    public void enqueue(T obj){
+
+    public void enqueue(T obj) {
         No novoNo = new No(obj);
         novoNo.setRefNo(refNoEntradaFila);
         refNoEntradaFila = novoNo;
     }
-    public T first(){
-        if(!this.isEmpty()){
+
+    public T first() {
+        if (!this.isEmpty()) {
             No primeiroNo = refNoEntradaFila;
-            while (true){
-                if (primeiroNo.getRefNo() != null){
+            while (true) {
+                if (primeiroNo.getRefNo() != null) {
                     primeiroNo = primeiroNo.getRefNo();
-                }else{
+                } else {
                     break;
                 }
             }
-            return (T)primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
-    }public T dequeue() {
+    }
+
+    public T dequeue() {
         No primeiroNo = null;
         if (!this.isEmpty()) {
             primeiroNo = refNoEntradaFila;
@@ -38,29 +43,29 @@ public class Fila<T> {
                     break;
                 }
             }
-            return (T)primeiroNo.getObject();
+            return (T) primeiroNo.getObject();
         }
         return null;
     }
 
-    public boolean isEmpty(){
-        return refNoEntradaFila == null? true : false;
+    public boolean isEmpty() {
+        return refNoEntradaFila == null ? true : false;
     }
 
-    public String toString(){
+    public String toString() {
         String stringRetorno = "";
         No noAuxiliar = refNoEntradaFila;
-        if (refNoEntradaFila != null){
-            while (true){
+        if (refNoEntradaFila != null) {
+            while (true) {
                 stringRetorno += "[No {objeto = " + noAuxiliar.getObject() + "}]---->";
-                if (noAuxiliar.getRefNo() != null){
+                if (noAuxiliar.getRefNo() != null) {
                     noAuxiliar = noAuxiliar.getRefNo();
-                }else{
+                } else {
                     stringRetorno += null;
                     break;
                 }
             }
-        }else{
+        } else {
             stringRetorno = null;
         }
         return stringRetorno;

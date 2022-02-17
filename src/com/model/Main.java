@@ -1,7 +1,7 @@
 package com.model;
 
 public class Main {
-    public static void main(String[]args){
+    public static void main(String[] args) {
         Fila<String> minhaFila = new Fila<>();
 
         minhaFila.enqueue("primeiro");
